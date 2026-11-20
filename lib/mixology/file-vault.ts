@@ -1,4 +1,5 @@
 // lib/mixology/file-vault.ts
+// 特调模块的文件库材料转换与映射层
 import { loadFileVaultLibrary, type FileVaultEntry } from "../chat-document-import";
 
 export async function getMixologyVaultEntries(): Promise<FileVaultEntry[]> {

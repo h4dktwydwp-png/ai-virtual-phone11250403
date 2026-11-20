@@ -1,4 +1,5 @@
 // lib/worldbook-file-vault.ts
+// 世界书文件库导入：将长文档切条目并自动生成触发关键词
 import { loadFileVaultLibrary, type FileVaultEntry } from "./chat-document-import";
 
 export async function getWorldbookVaultEntries(): Promise<FileVaultEntry[]> {
@@ -14,6 +15,7 @@ export function generateKeywords(title: string, text: string): string[] {
     if (title && title.trim()) {
         keywords.add(title.trim());
     }
+    // 简单提取前几个高频名词或标题关键字
     const matches = text.match(/[\u4E00-\u9FA5]{2,4}/g);
     if (matches) {
         for (let i = 0; i < Math.min(5, matches.length); i++) {
